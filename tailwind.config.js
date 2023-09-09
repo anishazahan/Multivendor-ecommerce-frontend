@@ -15,3 +15,6 @@ module.exports = {
   },
   plugins: [],
 };
+
+// header.jsx
+// Banner.jsx
