@@ -14,12 +14,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shops" element={<Shops />} />
+        {/* <Route path='/card' element={<Card />} /> */}
         {/* <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
      
         <Route path='/products?' element={<CategoryShops />} />
         <Route path='/products/search?' element={<SearchProducts />} />
-        <Route path='/card' element={<Card />} />
+     
         <Route path='/order/confirm?' element={<ConfirmOrder />} />
         <Route path='/shipping' element={<Shipping />} />
         <Route path='/payment' element={<Payment />} />
