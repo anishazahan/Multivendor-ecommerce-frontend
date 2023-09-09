@@ -18,3 +18,8 @@ module.exports = {
 
 // header.jsx
 // Banner.jsx
+// FeaturesProducts.jsx
+// Ratings.jsx
+// Products.jsx
+// Footer.jsx
+// shop.jsx

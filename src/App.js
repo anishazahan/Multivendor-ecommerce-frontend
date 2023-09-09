@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Shops from "./pages/Shops";
 
 // const dispatch = useDispatch()
 // useEffect(() => {
@@ -12,9 +13,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/shops" element={<Shops />} />
         {/* <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/shops' element={<Shops />} />
+     
         <Route path='/products?' element={<CategoryShops />} />
         <Route path='/products/search?' element={<SearchProducts />} />
         <Route path='/card' element={<Card />} />
