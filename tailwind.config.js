@@ -23,3 +23,10 @@ module.exports = {
 // Products.jsx
 // Footer.jsx
 // shop.jsx
+// Card.jsx
+// Details.jsx
+// Reviews.jsx
+// RateTem.jsx
+// Register.jsx
+// Login.jsx
+// Shipping.jsx
