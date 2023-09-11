@@ -304,7 +304,7 @@ const Card = () => {
           )}
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
