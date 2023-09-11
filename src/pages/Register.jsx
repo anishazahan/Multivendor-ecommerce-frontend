@@ -54,7 +54,7 @@ const Register = () => {
           <FadeLoader />
         </div>
       )}
-      <Toaster />
+
       <Headers />
       <div className="bg-slate-200 mt-4">
         <div className="w-full justify-center items-center p-10">
