@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Headers from "../components/Headers";
-import Footer from "../components/Footer";
+
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+
+import { messageClear } from "../store/reducers/homeReducers";
 import {
-  get_card_products,
   delete_card_product,
-  messageClear,
-  quantity_inc,
+  get_card_products,
   quantity_dec,
+  quantity_inc,
 } from "../store/reducers/cardReducer";
+import Headers from "../components/Header";
 
 const Card = () => {
   const dispatch = useDispatch();
@@ -107,7 +108,7 @@ const Card = () => {
                                 <img
                                   className="w-[80px] h-[80px]"
                                   src={pt.productInfo.images[0]}
-                                  alt="product image"
+                                  alt="product images"
                                 />
                                 <div className="pr-4 text-slate-600">
                                   <h2 className="text-md">
@@ -303,7 +304,7 @@ const Card = () => {
           )}
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

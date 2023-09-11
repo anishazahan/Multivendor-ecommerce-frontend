@@ -12,15 +12,13 @@ root.render(
   <Provider store={store}>
     <App />
     <Toaster
-      toastOptions={
-        {
-          // position: 'top-right',
-          // style: {
-          //   background: 'white',
-          //   color: 'black'
-          // }
-        }
-      }
+      toastOptions={{
+        position: "top-right",
+        style: {
+          background: "white",
+          color: "black",
+        },
+      }}
     />
   </Provider>
 );

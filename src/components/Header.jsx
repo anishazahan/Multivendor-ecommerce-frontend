@@ -22,8 +22,8 @@ const Headers = () => {
   const navigate = useNavigate();
   const { categorys } = useSelector((state) => state?.home);
   // console.log({ categorys });
-  // const { userInfo } = useSelector((state) => state.auth);
-  // const { card_product_count } = useSelector((state) => state.card);
+  const { userInfo } = useSelector((state) => state.auth);
+  const { card_product_count } = useSelector((state) => state.card);
 
   // const userInfo = false;
 
@@ -38,13 +38,13 @@ const Headers = () => {
   const search = () => {
     navigate(`/products/search?category=${category}&&value=${searchValue}`);
   };
-  // const redirect_card_page = () => {
-  //   if (userInfo) {
-  //     navigate(`/card`);
-  //   } else {
-  //     navigate(`/login`);
-  //   }
-  // };
+  const redirect_card_page = () => {
+    if (userInfo) {
+      navigate(`/card`);
+    } else {
+      navigate(`/login`);
+    }
+  };
   return (
     <div className="w-full bg-white">
       <div className="header-top bg-[#eeeeee] md-lg:hidden">
@@ -85,7 +85,7 @@ const Headers = () => {
                     <li>English</li>
                   </ul>
                 </div>
-                {/* {userInfo ? (
+                {userInfo ? (
                   <Link
                     className="flex cursor-pointer justify-center items-center gap-2 text-sm"
                     to="/dashboard"
@@ -105,7 +105,7 @@ const Headers = () => {
                     </span>
                     <span>Login</span>
                   </Link>
-                )} */}
+                )}
               </div>
             </div>
           </div>
@@ -198,17 +198,17 @@ const Headers = () => {
                       </div>
                     </div>
                     <div
-                      // onClick={redirect_card_page}
+                      onClick={redirect_card_page}
                       className="relative flex justify-center items-center cursor-pointer w-[35px] h-[35px] rounded-full bg-[#e2e2e2]"
                     >
                       <span className="text-xl text-orange-500">
                         <AiFillShopping />
                       </span>
-                      {/* {card_product_count !== 0 && (
+                      {card_product_count !== 0 && (
                         <div className="w-[20px] h-[20px] absolute bg-green-500 rounded-full text-white flex justify-center items-center -top-[3px] -right-[5px]">
                           {card_product_count}
                         </div>
-                      )} */}
+                      )}
                     </div>
                   </div>
                 </div>
@@ -244,7 +244,7 @@ const Headers = () => {
                   <li>English</li>
                 </ul>
               </div>
-              {/* {userInfo ? (
+              {userInfo ? (
                 <Link
                   className="flex cursor-pointer justify-center items-center gap-2 text-sm"
                   to="/dashboard"
@@ -261,7 +261,7 @@ const Headers = () => {
                   </span>
                   <span>Login</span>
                 </div>
-              )} */}
+              )}
             </div>
             <ul className="flex flex-col justify-start items-start  text-md font-semibold uppercase">
               <li>
