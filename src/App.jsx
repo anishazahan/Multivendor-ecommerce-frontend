@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Shops from "./pages/Shops";
+import CategoryShops from "./pages/CategoryShops";
+import SearchProducts from "./pages/SearchProducts";
 
 function App() {
   return (
@@ -10,14 +12,14 @@ function App() {
         <Route path="/shops" element={<Shops />} />
         {/* <Route path='/card' element={<Card />} /> */}
         {/* <Route path='/product/details/:slug' element={<Details />} />  */}
+        {/* 
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} /> */}
 
-        {/* <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-     
-        <Route path='/products?' element={<CategoryShops />} />
-        <Route path='/products/search?' element={<SearchProducts />} />
-     
-        <Route path='/order/confirm?' element={<ConfirmOrder />} />
+        <Route path="/products?" element={<CategoryShops />} />
+        <Route path="/products/search?" element={<SearchProducts />} />
+
+        {/* <Route path='/order/confirm?' element={<ConfirmOrder />} />
         <Route path='/shipping' element={<Shipping />} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/product/details/:slug' element={<Details />} /> */}

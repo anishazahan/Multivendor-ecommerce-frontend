@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Range } from "react-range";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Headers from "../components/Header";
-// import Footer from "../components/Footer";
-// import Products from "../components/products/Products";
+
 import { AiFillStar } from "react-icons/ai";
 import { CiStar } from "react-icons/ci";
 import { BsFillGridFill } from "react-icons/bs";
@@ -12,29 +10,24 @@ import { FaThList } from "react-icons/fa";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
-  get_category,
   price_range_product,
   query_products,
 } from "../store/reducers/homeReducers";
+import Headers from "../components/Header";
 import Products from "../components/products/Products";
 import ShopProducts from "../components/products/ShopProducts";
 import Pagination from "../components/Pagination";
 
-const Shops = () => {
-  const {
-    products,
-    totalProduct,
-    latest_product,
-    categorys,
-    priceRange,
-    parPage,
-  } = useSelector((state) => state.home);
+const CategoryShops = () => {
+  let [searchParams, setSearchParams] = useSearchParams();
+  const category = searchParams.get("category");
+  const { products, totalProduct, latest_product, priceRange, parPage } =
+    useSelector((state) => state.home);
 
   const dispatch = useDispatch();
   const [pageNumber, setPageNumber] = useState(1);
   const [styles, setStyles] = useState("grid");
   const [filter, setFilter] = useState(true);
-  const [category, setCategory] = useState("");
   const [state, setState] = useState({
     values: [priceRange.low, priceRange.high],
   });
@@ -43,7 +36,6 @@ const Shops = () => {
 
   useEffect(() => {
     dispatch(price_range_product());
-    dispatch(get_category());
   }, []);
   useEffect(() => {
     setState({
@@ -51,19 +43,11 @@ const Shops = () => {
     });
   }, [priceRange]);
 
-  const queryCategoey = (e, value) => {
-    if (e.target.checked) {
-      setCategory(value);
-    } else {
-      setCategory("");
-    }
-  };
-  console.log(category);
   useEffect(() => {
     dispatch(
       query_products({
-        low: state.values[0],
-        high: state.values[1],
+        low: state.values[0] || "",
+        high: state.values[1] || "",
         category,
         rating,
         sortPrice,
@@ -129,30 +113,6 @@ const Shops = () => {
                   : "md:h-auto md:overflow-auto md:mb-0"
               }`}
             >
-              <h2 className="text-3xl font-bold mb-3 text-slate-600">
-                Category
-              </h2>
-              <div className="py-2">
-                {categorys.map((c, i) => (
-                  <div
-                    className="flex justify-start items-center gap-2 py-1"
-                    key={i}
-                  >
-                    <input
-                      checked={category === c.name ? true : false}
-                      onChange={(e) => queryCategoey(e, c.name)}
-                      type="checkbox"
-                      id={c.name}
-                    />
-                    <label
-                      className="text-slate-600 block cursor-pointer"
-                      htmlFor={c.name}
-                    >
-                      {c.name}
-                    </label>
-                  </div>
-                ))}
-              </div>
               <div className="py-2 flex flex-col gap-5">
                 <h2 className="text-3xl font-bold mb-3 text-slate-600">
                   Price
@@ -377,4 +337,4 @@ const Shops = () => {
   );
 };
 
-export default Shops;
+export default CategoryShops;
