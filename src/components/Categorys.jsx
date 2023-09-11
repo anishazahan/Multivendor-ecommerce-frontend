@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { get_category } from "../store/reducers/homeReducers";
 
 const Categorys = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(get_category());
+  }, []);
   const { categorys } = useSelector((state) => state.home);
 
   const responsive = {
@@ -49,8 +54,12 @@ const Categorys = () => {
         {categorys?.map((c, i) => (
           <Link className="h-[185px] border block" key={i} to="#">
             <div className="w-full h-full relative p-3">
-              <img src={c.image} alt="image" />
-              <div className="absolute bottom-6 w-full mx-auto font-bold left-0 flex justify-center items-center">
+              <img
+                className="w-full  object-contain"
+                src={c.image}
+                alt="images"
+              />
+              <div className="absolute bottom-3 w-full mx-auto font-bold left-0 flex justify-center items-center">
                 <span className="py-[2px] px-6 bg-[#3330305d] text-white">
                   {c.name}
                 </span>

@@ -100,7 +100,7 @@ export const homeReducer = createSlice({
   name: "home",
   initialState: {
     categorys: [],
-    // products: [],
+    products: [],
     totalProduct: 0,
     parPage: 4,
     latest_product: [],
@@ -129,34 +129,34 @@ export const homeReducer = createSlice({
     [get_category.fulfilled]: (state, { payload }) => {
       state.categorys = payload.categorys;
     },
-    // [get_products.fulfilled]: (state, { payload }) => {
-    //   state.products = payload.products;
-    //   state.latest_product = payload.latest_product;
-    //   state.topRated_product = payload.topRated_product;
-    //   state.discount_product = payload.discount_product;
-    // },
-    // [get_product.fulfilled]: (state, { payload }) => {
-    //   state.product = payload.product;
-    //   state.relatedProducts = payload.relatedProducts;
-    //   state.moreProducts = payload.moreProducts;
-    // },
-    // [price_range_product.fulfilled]: (state, { payload }) => {
-    //   state.latest_product = payload.latest_product;
-    //   state.priceRange = payload.priceRange;
-    // },
-    // [query_products.fulfilled]: (state, { payload }) => {
-    //   state.products = payload.products;
-    //   state.totalProduct = payload.totalProduct;
-    //   state.parPage = payload.parPage;
-    // },
-    // [customer_review.fulfilled]: (state, { payload }) => {
-    //   state.successMessage = payload.message;
-    // },
-    // [get_reviews.fulfilled]: (state, { payload }) => {
-    //   state.reviews = payload.reviews;
-    //   state.totalReview = payload.totalReview;
-    //   state.rating_review = payload.rating_review;
-    // },
+    [get_products.fulfilled]: (state, { payload }) => {
+      state.products = payload.products;
+      state.latest_product = payload.latest_product;
+      state.topRated_product = payload.topRated_product;
+      state.discount_product = payload.discount_product;
+    },
+    [get_product.fulfilled]: (state, { payload }) => {
+      state.product = payload.product;
+      state.relatedProducts = payload.relatedProducts;
+      state.moreProducts = payload.moreProducts;
+    },
+    [price_range_product.fulfilled]: (state, { payload }) => {
+      state.latest_product = payload.latest_product;
+      state.priceRange = payload.priceRange;
+    },
+    [query_products.fulfilled]: (state, { payload }) => {
+      state.products = payload.products;
+      state.totalProduct = payload.totalProduct;
+      state.parPage = payload.parPage;
+    },
+    [customer_review.fulfilled]: (state, { payload }) => {
+      state.successMessage = payload.message;
+    },
+    [get_reviews.fulfilled]: (state, { payload }) => {
+      state.reviews = payload.reviews;
+      state.totalReview = payload.totalReview;
+      state.rating_review = payload.rating_review;
+    },
   },
 });
 export const { messageClear } = homeReducer.actions;

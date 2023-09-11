@@ -1,12 +1,6 @@
-import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Shops from "./pages/Shops";
-
-// const dispatch = useDispatch()
-// useEffect(() => {
-//   dispatch(get_category())
-// }, [])
 
 function App() {
   return (

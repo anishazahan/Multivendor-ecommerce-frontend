@@ -30,3 +30,4 @@ module.exports = {
 // Register.jsx
 // Login.jsx
 // Shipping.jsx
+// 69-tutorial formate product

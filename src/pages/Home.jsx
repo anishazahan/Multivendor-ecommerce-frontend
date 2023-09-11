@@ -3,18 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Header from "../components/Header";
 import Banner from "../components/Banner";
-import { get_category } from "../store/reducers/homeReducers";
+import { get_category, get_products } from "../store/reducers/homeReducers";
 import Categorys from "../components/Categorys";
+import FeatureProducts from "../components/products/FeatureProducts";
+import Products from "../components/products/Products";
 const Home = () => {
   const dispatch = useDispatch();
-  const { categorys } = useSelector((state) => state?.home);
-  // const { products, latest_product, topRated_product, discount_product } =
-  //   useSelector((state) => state.home);
-  // useEffect(() => {
-  //   dispatch(get_products());
-  // }, []);
+
+  const { products, latest_product, topRated_product, discount_product } =
+    useSelector((state) => state?.home);
+  // console.log(products);
+
   useEffect(() => {
     dispatch(get_category());
+    dispatch(get_products());
   }, []);
   return (
     <div className="w-full">
@@ -23,7 +25,7 @@ const Home = () => {
       <div className="my-4">
         <Categorys />
       </div>
-      {/* <div className="py-[45px]">
+      <div className="py-[45px]">
         <FeatureProducts products={products} />
       </div>
       <div className="py-10">
@@ -41,7 +43,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer /> */}
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -16,6 +16,14 @@ import { FaThList } from "react-icons/fa";
 //   query_products,
 // } from "../store/reducers/homeReducer";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  get_category,
+  price_range_product,
+  query_products,
+} from "../store/reducers/homeReducers";
+import Products from "../components/products/Products";
+import ShopProducts from "../components/products/ShopProducts";
+import Pagination from "../components/Pagination";
 
 const Shops = () => {
   const {
@@ -38,56 +46,57 @@ const Shops = () => {
   const [rating, setRatingQ] = useState("");
   const [sortPrice, setSortPrice] = useState("");
 
-  //   useEffect(() => {
-  //     dispatch(price_range_product());
-  //   }, []);
-  //   useEffect(() => {
-  //     setState({
-  //       values: [priceRange.low, priceRange.high],
-  //     });
-  //   }, [priceRange]);
+  useEffect(() => {
+    dispatch(price_range_product());
+    dispatch(get_category());
+  }, []);
+  useEffect(() => {
+    setState({
+      values: [priceRange.low, priceRange.high],
+    });
+  }, [priceRange]);
 
-  //   const queryCategoey = (e, value) => {
-  //     if (e.target.checked) {
-  //       setCategory(value);
-  //     } else {
-  //       setCategory("");
-  //     }
-  //   };
-  //   console.log(category);
-  //   useEffect(() => {
-  //     dispatch(
-  //       query_products({
-  //         low: state.values[0],
-  //         high: state.values[1],
-  //         category,
-  //         rating,
-  //         sortPrice,
-  //         pageNumber,
-  //       })
-  //     );
-  //   }, [
-  //     state.values[0],
-  //     state.values[1],
-  //     category,
-  //     rating,
-  //     pageNumber,
-  //     sortPrice,
-  //   ]);
+  const queryCategoey = (e, value) => {
+    if (e.target.checked) {
+      setCategory(value);
+    } else {
+      setCategory("");
+    }
+  };
+  console.log(category);
+  useEffect(() => {
+    dispatch(
+      query_products({
+        low: state.values[0],
+        high: state.values[1],
+        category,
+        rating,
+        sortPrice,
+        pageNumber,
+      })
+    );
+  }, [
+    state.values[0],
+    state.values[1],
+    category,
+    rating,
+    pageNumber,
+    sortPrice,
+  ]);
 
-  //   const resetRating = () => {
-  //     setRatingQ("");
-  //     dispatch(
-  //       query_products({
-  //         low: state.values[0],
-  //         high: state.values[1],
-  //         category,
-  //         rating: "",
-  //         sortPrice,
-  //         pageNumber,
-  //       })
-  //     );
-  //   };
+  const resetRating = () => {
+    setRatingQ("");
+    dispatch(
+      query_products({
+        low: state.values[0],
+        high: state.values[1],
+        category,
+        rating: "",
+        sortPrice,
+        pageNumber,
+      })
+    );
+  };
   return (
     <div>
       <Headers />
@@ -309,7 +318,7 @@ const Shops = () => {
                 </div>
               </div>
               <div className="py-5 flex flex-col gap-4 md:hidden">
-                {/* <Products title="Latest Products" products={latest_product} /> */}
+                <Products title="Latest Products" products={latest_product} />
               </div>
             </div>
             <div className="w-9/12 md-lg:w-8/12 md:w-full">
@@ -350,10 +359,10 @@ const Shops = () => {
                   </div>
                 </div>
                 <div className="pb-8">
-                  {/* <ShopProducts products={products} styles={styles} /> */}
+                  <ShopProducts products={products} styles={styles} />
                 </div>
                 <div>
-                  {/* {totalProduct > parPage && (
+                  {totalProduct > parPage && (
                     <Pagination
                       pageNumber={pageNumber}
                       setPageNumber={setPageNumber}
@@ -361,7 +370,7 @@ const Shops = () => {
                       parPage={parPage}
                       showItem={Math.floor(totalProduct / parPage)}
                     />
-                  )} */}
+                  )}
                 </div>
               </div>
             </div>

@@ -381,7 +381,7 @@ const Headers = () => {
                       >
                         <img
                           src={c.image}
-                          className="w-[30px] h-[30px] rounded-full overflow-hidden"
+                          className="w-[30px] h-[30px] object-contain rounded-full overflow-hidden"
                           alt={c.name}
                         />
                         <Link
