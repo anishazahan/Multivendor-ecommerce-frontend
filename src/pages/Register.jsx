@@ -5,7 +5,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 // import { customer_register, messageClear } from "../store/reducers/authReducer";
 import Headers from "../components/Header";
@@ -54,6 +54,7 @@ const Register = () => {
           <FadeLoader />
         </div>
       )}
+      <Toaster />
       <Headers />
       <div className="bg-slate-200 mt-4">
         <div className="w-full justify-center items-center p-10">

@@ -25,7 +25,7 @@ const Headers = () => {
   // const { userInfo } = useSelector((state) => state.auth);
   // const { card_product_count } = useSelector((state) => state.card);
 
-  const userInfo = false;
+  // const userInfo = false;
 
   const { pathname } = useLocation();
   const [showShidebar, setShowShidebar] = useState(true);
@@ -85,7 +85,7 @@ const Headers = () => {
                     <li>English</li>
                   </ul>
                 </div>
-                {userInfo ? (
+                {/* {userInfo ? (
                   <Link
                     className="flex cursor-pointer justify-center items-center gap-2 text-sm"
                     to="/dashboard"
@@ -105,7 +105,7 @@ const Headers = () => {
                     </span>
                     <span>Login</span>
                   </Link>
-                )}
+                )} */}
               </div>
             </div>
           </div>
@@ -244,7 +244,7 @@ const Headers = () => {
                   <li>English</li>
                 </ul>
               </div>
-              {userInfo ? (
+              {/* {userInfo ? (
                 <Link
                   className="flex cursor-pointer justify-center items-center gap-2 text-sm"
                   to="/dashboard"
@@ -261,7 +261,7 @@ const Headers = () => {
                   </span>
                   <span>Login</span>
                 </div>
-              )}
+              )} */}
             </div>
             <ul className="flex flex-col justify-start items-start  text-md font-semibold uppercase">
               <li>

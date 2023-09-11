@@ -6,7 +6,7 @@ import { AiOutlineGoogle } from "react-icons/ai";
 import FadeLoader from "react-spinners/FadeLoader";
 import { useSelector, useDispatch } from "react-redux";
 
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { customer_login, messageClear } from "../store/reducers/authReducer";
 import Headers from "../components/Header";
 
@@ -49,6 +49,7 @@ const Login = () => {
 
   return (
     <div>
+      <Toaster />
       <Headers />
       {loader && (
         <div className="w-screen h-screen flex justify-center items-center fixed left-0 top-0 bg-[#38303033] z-[999]">
@@ -129,7 +130,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
