@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import Shops from "./pages/Shops";
 import CategoryShops from "./pages/CategoryShops";
 import SearchProducts from "./pages/SearchProducts";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -12,9 +14,9 @@ function App() {
         <Route path="/shops" element={<Shops />} />
         {/* <Route path='/card' element={<Card />} /> */}
         {/* <Route path='/product/details/:slug' element={<Details />} />  */}
-        {/* 
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} /> */}
+
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
 
         <Route path="/products?" element={<CategoryShops />} />
         <Route path="/products/search?" element={<SearchProducts />} />

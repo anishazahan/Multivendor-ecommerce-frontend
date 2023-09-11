@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Headers from "../components/Headers";
-import Footer from "../components/Footer";
+
 import { FaFacebookF } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineGoogle } from "react-icons/ai";
 import FadeLoader from "react-spinners/FadeLoader";
 import { useSelector, useDispatch } from "react-redux";
-import { customer_login, messageClear } from "../store/reducers/authReducer";
+
 import toast from "react-hot-toast";
+import { customer_login, messageClear } from "../store/reducers/authReducer";
+import Headers from "../components/Header";
 
 const Login = () => {
   const { loader, successMessage, errorMessage, userInfo } = useSelector(
@@ -128,7 +129,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

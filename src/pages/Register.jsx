@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Headers from "../components/Headers";
-import Footer from "../components/Footer";
+
 import { FaFacebookF } from "react-icons/fa";
 import FadeLoader from "react-spinners/FadeLoader";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,6 +7,8 @@ import { AiOutlineGoogle } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 
+// import { customer_register, messageClear } from "../store/reducers/authReducer";
+import Headers from "../components/Header";
 import { customer_register, messageClear } from "../store/reducers/authReducer";
 
 const Register = () => {
@@ -143,7 +144,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
