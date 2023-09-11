@@ -33,9 +33,9 @@ const Headers = () => {
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("");
 
-  // const search = () => {
-  //   navigate(`/products/search?category=${category}&&value=${searchValue}`);
-  // };
+  const search = () => {
+    navigate(`/products/search?category=${category}&&value=${searchValue}`);
+  };
   // const redirect_card_page = () => {
   //   if (userInfo) {
   //     navigate(`/card`);
@@ -143,7 +143,7 @@ const Headers = () => {
                     <Link
                       to="/shops"
                       className={`p-2 block ${
-                        pathname === "/shop"
+                        pathname === "/shops"
                           ? "text-[#7fad39]"
                           : "text-slate-600"
                       }`}
@@ -425,7 +425,7 @@ const Headers = () => {
                     placeholder="what do you need"
                   />
                   <button
-                    // onClick={search}
+                    onClick={search}
                     className="bg-violet-400 right-0 absolute px-8 h-full font-semibold uppercase text-white"
                   >
                     Search
