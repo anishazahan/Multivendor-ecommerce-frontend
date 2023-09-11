@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Card from "./pages/Card";
 import Shipping from "./pages/Shipping";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
         <Route path="/products?" element={<CategoryShops />} />
         <Route path="/products/search?" element={<SearchProducts />} />
         <Route path="/shipping" element={<Shipping />} />
+        <Route path="/payment" element={<Payment />} />
 
         {/* <Route path='/order/confirm?' element={<ConfirmOrder />} />
-        <Route path='/payment' element={<Payment />} />
+        
         <Route path='/product/details/:slug' element={<Details />} /> */}
 
         {/* <Route path='/dashboard' element={<ProtectUser />}>
