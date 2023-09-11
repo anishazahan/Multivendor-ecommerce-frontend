@@ -287,7 +287,7 @@ const Shipping = () => {
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
