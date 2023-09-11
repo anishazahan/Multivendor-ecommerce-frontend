@@ -18,11 +18,12 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const Header = () => {
+const Headers = () => {
   const navigate = useNavigate();
-  //   const { categorys } = useSelector((state) => state.home);
-  //   const { userInfo } = useSelector((state) => state.auth);
-  //   const { card_product_count } = useSelector((state) => state.card);
+  const { categorys } = useSelector((state) => state?.home);
+  // console.log({ categorys });
+  // const { userInfo } = useSelector((state) => state.auth);
+  // const { card_product_count } = useSelector((state) => state.card);
 
   const { pathname } = useLocation();
   const [showShidebar, setShowShidebar] = useState(true);
@@ -32,27 +33,27 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("");
 
-  const search = () => {
-    navigate(`/products/search?category=${category}&&value=${searchValue}`);
-  };
-  //   const redirect_card_page = () => {
-  //     if (userInfo) {
-  //       navigate(`/card`);
-  //     } else {
-  //       navigate(`/login`);
-  //     }
-  //   };
+  // const search = () => {
+  //   navigate(`/products/search?category=${category}&&value=${searchValue}`);
+  // };
+  // const redirect_card_page = () => {
+  //   if (userInfo) {
+  //     navigate(`/card`);
+  //   } else {
+  //     navigate(`/login`);
+  //   }
+  // };
   return (
     <div className="w-full bg-white">
       <div className="header-top bg-[#eeeeee] md-lg:hidden">
-        <div className="w-[90%] lg:w-[90%]  mx-auto">
+        <div className="w-[85%] lg:w-[90%] mx-auto">
           <div className="flex w-full justify-between items-center h-[50px] text-slate-500">
             <ul className="flex justify-start items-center gap-8">
               <li className="flex relative justify-center items-center gap-2 text-sm after:absolute after:h-[18px] after:w-[1px] after:bg-[#afafaf] after:-right-[16px]">
                 <span>
                   <GrMail />
                 </span>
-                <span>anishazahan@gmail.com</span>
+                <span>sheikhfarid@gmail.com</span>
               </li>
               <span>Multi vendor ecommerce</span>
             </ul>
@@ -82,34 +83,34 @@ const Header = () => {
                     <li>English</li>
                   </ul>
                 </div>
-                {/* {userInfo ? ( */}
-                <Link
-                  className="flex cursor-pointer justify-center items-center gap-2 text-sm"
-                  to="/dashboard"
-                >
-                  <span>
-                    <FaUser />
-                  </span>
-                  {/* <span>{userInfo.name}</span> */} user
-                </Link>
-                {/* ) : ( */}
-                <Link
-                  to="/login"
-                  className="flex cursor-pointer justify-center items-center gap-2 text-sm"
-                >
-                  <span>
-                    <FaLock />
-                  </span>
-                  <span>Login</span>
-                </Link>
-                {/* )} */}
+                {/* {userInfo ? (
+                  <Link
+                    className="flex cursor-pointer justify-center items-center gap-2 text-sm"
+                    to="/dashboard"
+                  >
+                    <span>
+                      <FaUser />
+                    </span>
+                    <span>{userInfo.name}</span>
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="flex cursor-pointer justify-center items-center gap-2 text-sm"
+                  >
+                    <span>
+                      <FaLock />
+                    </span>
+                    <span>Login</span>
+                  </Link>
+                )} */}
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="w-white">
-        <div className="w-[90%] lg:w-[90%] mx-auto">
+        <div className="w-[85%] lg:w-[90%] mx-auto">
           <div className="h-[80px] md-lg:h-[100px] flex justify-between items-center flex-wrap">
             <div className="md-lg:w-full w-3/12 md-lg:pt-4">
               <div className="flex justify-between items-center">
@@ -195,17 +196,17 @@ const Header = () => {
                       </div>
                     </div>
                     <div
-                      //   onClick={redirect_card_page}
+                      // onClick={redirect_card_page}
                       className="relative flex justify-center items-center cursor-pointer w-[35px] h-[35px] rounded-full bg-[#e2e2e2]"
                     >
                       <span className="text-xl text-orange-500">
                         <AiFillShopping />
                       </span>
-                      {/* {card_product_count !== 0 && ( */}
-                      <div className="w-[20px] h-[20px] absolute bg-green-500 rounded-full text-white flex justify-center items-center -top-[3px] -right-[5px]">
-                        {/* {card_product_count} */}
-                      </div>
-                      {/* )} */}
+                      {/* {card_product_count !== 0 && (
+                        <div className="w-[20px] h-[20px] absolute bg-green-500 rounded-full text-white flex justify-center items-center -top-[3px] -right-[5px]">
+                          {card_product_count}
+                        </div>
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -241,24 +242,24 @@ const Header = () => {
                   <li>English</li>
                 </ul>
               </div>
-              {/* {userInfo ? ( */}
-              <Link
-                className="flex cursor-pointer justify-center items-center gap-2 text-sm"
-                to="/dashboard"
-              >
-                <span>
-                  <FaUser />
-                </span>
-                {/* <span>{userInfo.name}</span> */}
-              </Link>
-              {/* ) : ( */}
-              <div className="flex cursor-pointer justify-center items-center gap-2 text-sm">
-                <span>
-                  <FaLock />
-                </span>
-                <span>Login</span>
-              </div>
-              {/* )} */}
+              {/* {userInfo ? (
+                <Link
+                  className="flex cursor-pointer justify-center items-center gap-2 text-sm"
+                  to="/dashboard"
+                >
+                  <span>
+                    <FaUser />
+                  </span>
+                  <span>{userInfo.name}</span>
+                </Link>
+              ) : (
+                <div className="flex cursor-pointer justify-center items-center gap-2 text-sm">
+                  <span>
+                    <FaLock />
+                  </span>
+                  <span>Login</span>
+                </div>
+              )} */}
             </div>
             <ul className="flex flex-col justify-start items-start  text-md font-semibold uppercase">
               <li>
@@ -348,7 +349,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="w-[90%] lg:w-[90%] mx-auto">
+      <div className="w-[85%] lg:w-[90%] mx-auto">
         <div className="flex w-full flex-wrap md-lg:gap-8">
           <div className="w-3/12 md-lg:w-full">
             <div className="bg-white relative">
@@ -372,7 +373,7 @@ const Header = () => {
                 } overflow-hidden transition-all md-lg:relative duration-500 absolute z-[99999] bg-white w-full border-x`}
               >
                 <ul className="py-2 text-slate-600 font-medium h-full overflow-auto">
-                  {/* {categorys.map((c, i) => {
+                  {categorys?.map((c, i) => {
                     return (
                       <li
                         key={i}
@@ -391,7 +392,7 @@ const Header = () => {
                         </Link>
                       </li>
                     );
-                  })} */}
+                  })}
                 </ul>
               </div>
             </div>
@@ -408,11 +409,11 @@ const Header = () => {
                       id=""
                     >
                       <option value="">Select category</option>
-                      {/* {categorys.map((c, i) => (
+                      {categorys?.map((c, i) => (
                         <option key={i} value={c.name}>
                           {c.name}
                         </option>
-                      ))} */}
+                      ))}
                     </select>
                   </div>
                   <input
@@ -424,7 +425,7 @@ const Header = () => {
                     placeholder="what do you need"
                   />
                   <button
-                    onClick={search}
+                    // onClick={search}
                     className="bg-violet-400 right-0 absolute px-8 h-full font-semibold uppercase text-white"
                   >
                     Search
@@ -454,4 +455,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Headers;
