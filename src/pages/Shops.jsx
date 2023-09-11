@@ -145,7 +145,7 @@ const Shops = () => {
                   >
                     <input
                       checked={category === c.name ? true : false}
-                      //   onChange={(e) => queryCategoey(e, c.name)}
+                      onChange={(e) => queryCategoey(e, c.name)}
                       type="checkbox"
                       id={c.name}
                     />
@@ -296,7 +296,7 @@ const Shops = () => {
                     </span>
                   </div>
                   <div
-                    // onClick={resetRating}
+                    onClick={resetRating}
                     className="text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer"
                   >
                     <span>
