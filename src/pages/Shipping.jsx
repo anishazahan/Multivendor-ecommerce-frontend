@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Headers from "../components/Headers";
-import Footer from "../components/Footer";
+
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { place_order } from "../store/reducers/orderReducer";
+import Headers from "../components/Header";
 
 const Shipping = () => {
   const navigate = useNavigate();
@@ -219,7 +219,7 @@ const Shipping = () => {
                             <img
                               className="w-[80px] h-[80px]"
                               src={pt.productInfo.images[0]}
-                              alt="product image"
+                              alt="product images"
                             />
                             <div className="pr-4 text-slate-600">
                               <h2 className="text-md">{pt.productInfo.name}</h2>
@@ -287,7 +287,7 @@ const Shipping = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
