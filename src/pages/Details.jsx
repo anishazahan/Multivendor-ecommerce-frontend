@@ -193,7 +193,7 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <section>
+      {/* <section> */}
         <div className="w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%] h-full mx-auto pb-16">
           <div className="grid grid-cols-2 md-lg:grid-cols-1 gap-8">
             <div>
