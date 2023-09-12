@@ -12,7 +12,6 @@ import {
 } from "../../store/reducers/cardReducer";
 
 const FeatureProducts = ({ products }) => {
-  // console.log(products);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
