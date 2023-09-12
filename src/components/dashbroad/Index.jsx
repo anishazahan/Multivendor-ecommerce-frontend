@@ -138,8 +138,8 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </div>
+    {/* </div> */}
   );
 };
 
-// export default Index;
+export default Index;
