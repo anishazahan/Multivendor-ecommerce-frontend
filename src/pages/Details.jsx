@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from "react";
-import Headers from "../components/Headers";
-import Footer from "../components/Footer";
+
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Swiper,
+  SwiperSlide,
+  useSwiper,
+  useSwiperSlide,
+  // Pagination,
+} from "swiper/react";
 import "swiper/css";
 import { useDispatch, useSelector } from "react-redux";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
+
+import "swiper/swiper-bundle.css";
 import Ratings from "../components/Ratings";
 import { AiFillHeart } from "react-icons/ai";
 import { FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
-import Reviews from "../components/Reviews";
-import { get_product } from "../store/reducers/homeReducer";
+
 import {
   add_to_card,
   messageClear,
   add_to_wishlist,
 } from "../store/reducers/cardReducer";
 import toast from "react-hot-toast";
+import { get_product } from "../store/reducers/homeReducers";
+import Headers from "../components/Header";
+import Reviews from "../components/Reviews";
 
 const Details = () => {
   const navigate = useNavigate();
@@ -400,7 +407,11 @@ const Details = () => {
                     return (
                       <Link className="block">
                         <div className="relative h-[270px]">
-                          <img className="w-full h-full" src={p.images[0]} />
+                          <img
+                            className="w-full h-full"
+                            src={p.images[0]}
+                            alt=""
+                          />
                           {p.discount !== 0 && (
                             <div className="flex justify-center items-center absolute text-white w-[38px] h-[38px] rounded-full bg-red-500 font-semibold text-xs left-2 top-2">
                               {p.discount}%
@@ -441,11 +452,11 @@ const Details = () => {
               }}
               spaceBetween={25}
               loop={true}
-              pagination={{
-                clickable: true,
-                el: ".custom_bullet",
-              }}
-              modules={[Pagination]}
+              // pagination={{
+              //   clickable: true,
+              //   el: ".custom_bullet",
+              // }}
+              // modules={[Pagination]}
               className="mySwiper"
             >
               {relatedProducts.map((p, i) => {
@@ -454,7 +465,11 @@ const Details = () => {
                     <Link className="block">
                       <div className="relative h-[270px]">
                         <div className="w-full h-full">
-                          <img className="w-full h-full" src={p.images[0]} />
+                          <img
+                            className="w-full h-full"
+                            src={p.images[0]}
+                            alt=""
+                          />
                           <div className="absolute h-full w-full top-0 left-0 bg-[#000] opacity-25 hover:opacity-50 transition-all duration-500"></div>
                         </div>
                         {p.discount !== 0 && (
@@ -487,7 +502,7 @@ const Details = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

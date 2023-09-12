@@ -15,6 +15,7 @@ import Orders from "./components/dashbroad/Orders";
 import Wishlist from "./components/dashbroad/Wishlist";
 import Order from "./components/dashbroad/Order";
 import ChangePassword from "./components/dashbroad/ChangePassword";
+import Details from "./pages/Details";
 // import Chat from "./components/dashbroad/Chat";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shops" element={<Shops />} />
         <Route path="/card" element={<Card />} />
-        {/* <Route path='/product/details/:slug' element={<Details />} />  */}
+        <Route path="/product/details/:slug" element={<Details />} />
 
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
