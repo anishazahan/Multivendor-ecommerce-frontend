@@ -15,6 +15,7 @@ import {
 } from "../store/reducers/homeReducers";
 import Ratings from "./Ratings";
 import Pagination from "./Pagination";
+import RatingTemp from "./RatingTemp";
 
 const Reviews = ({ product }) => {
   const dispatch = useDispatch();
@@ -82,7 +83,7 @@ const Reviews = ({ product }) => {
         <div className="flex gap-2 flex-col py-4">
           <div className="flex justify-start items-center gap-5">
             <div className="text-md flex gap-1 w-[93px]">
-              {/* <RatingTemp rating={5} /> */}
+              <RatingTemp rating={5} />
             </div>
             <div className="w-[200px] h-[14px] bg-slate-200 relative">
               <div
@@ -100,7 +101,7 @@ const Reviews = ({ product }) => {
           </div>
           <div className="flex justify-start items-center gap-5">
             <div className="text-md flex gap-1 w-[93px]">
-              {/* <RatingTemp rating={4} /> */}
+              <RatingTemp rating={4} />
             </div>
             <div className="w-[200px] h-[14px] bg-slate-200 relative">
               <div
@@ -118,7 +119,7 @@ const Reviews = ({ product }) => {
           </div>
           <div className="flex justify-start items-center gap-5">
             <div className="text-md flex gap-1 w-[93px]">
-              {/* <RatingTemp rating={3} /> */}
+              <RatingTemp rating={3} />
             </div>
             <div className="w-[200px] h-[14px] bg-slate-200 relative">
               <div
@@ -136,7 +137,7 @@ const Reviews = ({ product }) => {
           </div>
           <div className="flex justify-start items-center gap-5">
             <div className="text-md flex gap-1 w-[93px]">
-              {/* <RatingTemp rating={2} /> */}
+              <RatingTemp rating={2} />
             </div>
             <div className="w-[200px] h-[14px] bg-slate-200 relative">
               <div
@@ -154,7 +155,7 @@ const Reviews = ({ product }) => {
           </div>
           <div className="flex justify-start items-center gap-5">
             <div className="text-md flex gap-1 w-[93px]">
-              {/* <RatingTemp rating={1} /> */}
+              <RatingTemp rating={1} />
             </div>
             <div className="w-[200px] h-[14px] bg-slate-200 relative">
               <div
@@ -172,7 +173,7 @@ const Reviews = ({ product }) => {
           </div>
           <div className="flex justify-start items-center gap-5">
             <div className="text-md flex gap-1 w-[93px]">
-              {/* <RatingTemp rating={0} /> */}
+              <RatingTemp rating={0} />
             </div>
             <div className="w-[200px] h-[14px] bg-slate-200 relative">
               <div className="h-full bg-[#EDBB0E] w-[0%]"></div>
@@ -189,7 +190,7 @@ const Reviews = ({ product }) => {
           <div key={i} className="flex flex-col gap-1">
             <div className="flex justify-between items-center">
               <div className="flex gap-1 text-xl">
-                {/* <RatingTemp rating={r.rating} /> */}
+                <RatingTemp rating={r.rating} />
               </div>
               <span className="text-slate-600">{r.date}</span>
             </div>
