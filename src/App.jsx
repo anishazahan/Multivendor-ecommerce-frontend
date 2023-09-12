@@ -8,6 +8,8 @@ import Register from "./pages/Register";
 import Card from "./pages/Card";
 import Shipping from "./pages/Shipping";
 import Payment from "./pages/Payment";
+import ProtectUser from "./utils/ProtectUser";
+import Dashboard from "./pages/Dashbroad";
 
 function App() {
   return (
@@ -30,17 +32,17 @@ function App() {
         
         <Route path='/product/details/:slug' element={<Details />} /> */}
 
-        {/* <Route path='/dashboard' element={<ProtectUser />}>
-          <Route path='' element={<Dashboard />}>
-            <Route path='' element={<Index />} />
+        <Route path="/dashboard" element={<ProtectUser />}>
+          <Route path="" element={<Dashboard />}>
+            {/* <Route path='' element={<Index />} />
             <Route path='my-orders' element={<Orders />} />
             <Route path='my-wishlist' element={<Wishlist />} />
             <Route path='order/details/:orderId' element={<Order />} />
             <Route path='chage-password' element={<ChangePassword />} />
             <Route path='chat' element={<Chat />} />
-            <Route path='chat/:sellerId' element={<Chat />} />
+            <Route path='chat/:sellerId' element={<Chat />} /> */}
           </Route>
-        </Route> */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );
