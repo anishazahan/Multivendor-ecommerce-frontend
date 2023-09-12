@@ -4,12 +4,13 @@ import { AiFillHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+
+import toast from "react-hot-toast";
 import {
   get_wishlist_products,
-  remove_wishlist,
   messageClear,
+  remove_wishlist,
 } from "../../store/reducers/cardReducer";
-import toast from "react-hot-toast";
 const Wishlist = () => {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
@@ -40,7 +41,7 @@ const Wishlist = () => {
             <img
               className="sm:h-full w-full h-[240px]"
               src={p.image}
-              alt="product image"
+              alt="product images"
             />
             <ul className="flex transition-all duration-700 -bottom-10 justify-center items-center gap-2 absolute w-full group-hover:bottom-3">
               <li
