@@ -11,6 +11,11 @@ import Payment from "./pages/Payment";
 import ProtectUser from "./utils/ProtectUser";
 import Dashboard from "./pages/Dashbroad";
 import Index from "./components/dashbroad/Index";
+import Orders from "./components/dashbroad/Orders";
+import Wishlist from "./components/dashbroad/Wishlist";
+import Order from "./components/dashbroad/Order";
+import ChangePassword from "./components/dashbroad/ChangePassword";
+import Chat from "./components/dashbroad/Chat";
 
 function App() {
   return (
@@ -36,12 +41,12 @@ function App() {
         <Route path="/dashboard" element={<ProtectUser />}>
           <Route path="" element={<Dashboard />}>
             <Route path="" element={<Index />} />
-            <Route path="my-orders" element={<Order />} />
-            {/* <Route path="my-wishlist" element={<Wishlist />} />
+            <Route path="my-orders" element={<Orders />} />
+            <Route path="my-wishlist" element={<Wishlist />} />
             <Route path="order/details/:orderId" element={<Order />} />
             <Route path="chage-password" element={<ChangePassword />} />
             <Route path="chat" element={<Chat />} />
-            <Route path="chat/:sellerId" element={<Chat />} /> */}
+            <Route path="chat/:sellerId" element={<Chat />} />
           </Route>
         </Route>
       </Routes>
