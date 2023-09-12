@@ -7,6 +7,7 @@ import { RiProductHuntLine } from "react-icons/ri";
 import { BsChat, BsHeart } from "react-icons/bs";
 import { TfiLock } from "react-icons/tfi";
 import { BiLogInCircle } from "react-icons/bi";
+import Headers from "../components/Header";
 const Dashboard = () => {
   const [filterShow, setFilterShow] = useState(false);
   return (
