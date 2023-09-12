@@ -2,31 +2,32 @@ import React, { useEffect } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, redirect, useNavigate } from "react-router-dom";
+import { get_dashboard_index_data } from "../../store/reducers/dashboardReducer";
 // import { get_dashboard_index_data } from "../../store/reducers/dashboardReducer";
 const Index = () => {
   const navigate = useNavigate();
-  // const { userInfo } = useSelector((state) => state.auth);
-  // const { totalOrder, pendingOrder, recentOrders, cancelledOrder } =
-  //   useSelector((state) => state.dashboard);
+  const { userInfo } = useSelector((state) => state.auth);
+  const { totalOrder, pendingOrder, recentOrders, cancelledOrder } =
+    useSelector((state) => state.dashboard);
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(get_dashboard_index_data(userInfo.id));
-  // }, []);
-  // const redirect = (ord) => {
-  //   let items = 0;
-  //   for (let i = 0; i < ord.length; i++) {
-  //     items = ord.products[i].quantity + items;
-  //   }
-  //   navigate("/payment", {
-  //     state: {
-  //       price: ord.price,
-  //       items,
-  //       orderId: ord._id,
-  //     },
-  //   });
-  // };
+  useEffect(() => {
+    dispatch(get_dashboard_index_data(userInfo.id));
+  }, []);
+  const redirect = (ord) => {
+    let items = 0;
+    for (let i = 0; i < ord.length; i++) {
+      items = ord.products[i].quantity + items;
+    }
+    navigate("/payment", {
+      state: {
+        price: ord.price,
+        items,
+        orderId: ord._id,
+      },
+    });
+  };
   return (
     <div>
       <div className="grid grid-cols-3 md:grid-cols-1 gap-5">
@@ -37,7 +38,7 @@ const Index = () => {
             </span>
           </div>
           <div className="flex flex-col justify-start items-start text-slate-600">
-            {/* <h2 className="text-3xl font-bold">{totalOrder}</h2> */}
+            <h2 className="text-3xl font-bold">{totalOrder}</h2>
             <span>Orders</span>
           </div>
         </div>
@@ -48,7 +49,7 @@ const Index = () => {
             </span>
           </div>
           <div className="flex flex-col justify-start items-start text-slate-600">
-            {/* <h2 className="text-3xl font-bold">{pendingOrder}</h2> */}
+            <h2 className="text-3xl font-bold">{pendingOrder}</h2>
             <span>Pending Orders</span>
           </div>
         </div>
@@ -59,7 +60,7 @@ const Index = () => {
             </span>
           </div>
           <div className="flex flex-col justify-start items-start text-slate-600">
-            {/* <h2 className="text-3xl font-bold">{cancelledOrder}</h2> */}
+            <h2 className="text-3xl font-bold">{cancelledOrder}</h2>
             <span>Cancelled Orders</span>
           </div>
         </div>
@@ -89,7 +90,7 @@ const Index = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* {recentOrders.map((o, i) => (
+                {recentOrders.map((o, i) => (
                   <tr key={i} className="bg-white border-b">
                     <td
                       scope="row"
@@ -131,7 +132,7 @@ const Index = () => {
                       )}
                     </td>
                   </tr>
-                ))} */}
+                ))}
               </tbody>
             </table>
           </div>
@@ -141,4 +142,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+// export default Index;
