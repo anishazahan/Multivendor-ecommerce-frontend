@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Headers from "../components/Headers";
-import Footer from "../components/Footer";
-import Stripe from "../components/Stripe";
+import Header from "../components/Header";
+
 import { useLocation } from "react-router-dom";
+import Stripe from "stripe";
+
 const Payment = () => {
   const {
     state: { price, items, orderId },
@@ -10,7 +11,7 @@ const Payment = () => {
   const [paymentMethod, setPaymentMethod] = useState("stripe");
   return (
     <div>
-      <Headers />
+      <Header />
       <section className="bg-[#eeeeee]">
         <div className="w-[85%] lg:w-[90%] md:w-[90%] sm:w-[90%] mx-auto py-16 mt-4">
           <div className="flex flex-wrap md:flex-col-reverse">
@@ -120,7 +121,7 @@ const Payment = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
