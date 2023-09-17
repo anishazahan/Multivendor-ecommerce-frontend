@@ -5,13 +5,14 @@ import { IoSend } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import io from "socket.io-client";
+
+import toast from "react-hot-toast";
 import {
   add_friend,
   send_message,
   updateMessage,
-  messageClear,
 } from "../../store/reducers/chatReducer";
-import toast from "react-hot-toast";
+import { messageClear } from "../../store/reducers/homeReducers";
 
 const socket = io("http://localhost:5000");
 
@@ -111,7 +112,7 @@ const Chat = () => {
                   {activeSeller.some((c) => c.sellerId === f.fdId) && (
                     <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0"></div>
                   )}
-                  <img src="http://localhost:3000/images/user.png" alt="" />
+                  <img src={f.image} alt="" />
                 </div>
                 <span>{f.name}</span>
               </Link>
@@ -126,7 +127,7 @@ const Chat = () => {
                   {activeSeller.some((c) => c.sellerId === currentFd.fdId) && (
                     <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0"></div>
                   )}
-                  <img src="http://localhost:3000/images/user.png" alt="" />
+                  <img src={currentFd.image} alt="" />
                 </div>
                 <span>{currentFd.name}</span>
               </div>
@@ -142,6 +143,7 @@ const Chat = () => {
                         >
                           <img
                             className="w-[30px] h-[30px] "
+                            // customer img
                             src="http://localhost:3000/images/user.png"
                             alt=""
                           />
@@ -159,6 +161,7 @@ const Chat = () => {
                         >
                           <img
                             className="w-[30px] h-[30px] "
+                            // seller img
                             src="http://localhost:3000/images/user.png"
                             alt=""
                           />

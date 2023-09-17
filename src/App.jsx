@@ -16,6 +16,7 @@ import Wishlist from "./components/dashbroad/Wishlist";
 import Order from "./components/dashbroad/Order";
 import ChangePassword from "./components/dashbroad/ChangePassword";
 import Details from "./pages/Details";
+import Chat from "./components/dashbroad/Chat";
 // import Chat from "./components/dashbroad/Chat";
 
 function App() {
@@ -46,8 +47,8 @@ function App() {
             <Route path="my-wishlist" element={<Wishlist />} />
             <Route path="order/details/:orderId" element={<Order />} />
             <Route path="chage-password" element={<ChangePassword />} />
-            {/* <Route path="chat" element={<Chat />} />
-            <Route path="chat/:sellerId" element={<Chat />} /> */}
+            <Route path="chat" element={<Chat />} />
+            <Route path="chat/:sellerId" element={<Chat />} />
           </Route>
         </Route>
       </Routes>
