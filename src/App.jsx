@@ -17,6 +17,7 @@ import Order from "./components/dashbroad/Order";
 import ChangePassword from "./components/dashbroad/ChangePassword";
 import Details from "./pages/Details";
 import Chat from "./components/dashbroad/Chat";
+import ConfirmOrder from "./pages/ConfirmOrder";
 // import Chat from "./components/dashbroad/Chat";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shops" element={<Shops />} />
         <Route path="/card" element={<Card />} />
+        <Route path="/order/confirm?" element={<ConfirmOrder />} />
         <Route path="/product/details/:slug" element={<Details />} />
 
         <Route path="/register" element={<Register />} />
@@ -35,10 +37,6 @@ function App() {
         <Route path="/products/search?" element={<SearchProducts />} />
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/payment" element={<Payment />} />
-
-        {/* <Route path='/order/confirm?' element={<ConfirmOrder />} />
-        
-        <Route path='/product/details/:slug' element={<Details />} /> */}
 
         <Route path="/dashboard" element={<ProtectUser />}>
           <Route path="" element={<Dashboard />}>

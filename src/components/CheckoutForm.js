@@ -6,6 +6,7 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { useState } from "react";
+
 const CheckoutForm = ({ orderId }) => {
   localStorage.setItem("orderId", orderId);
   const stripe = useStripe();

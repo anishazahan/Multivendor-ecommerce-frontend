@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 
 import { useLocation } from "react-router-dom";
 import Stripe from "stripe";
+import Headers from "../components/Header";
 
 const Payment = () => {
   const {
@@ -11,7 +11,7 @@ const Payment = () => {
   const [paymentMethod, setPaymentMethod] = useState("stripe");
   return (
     <div>
-      <Header />
+      <Headers />
       <section className="bg-[#eeeeee]">
         <div className="w-[85%] lg:w-[90%] md:w-[90%] sm:w-[90%] mx-auto py-16 mt-4">
           <div className="flex flex-wrap md:flex-col-reverse">
