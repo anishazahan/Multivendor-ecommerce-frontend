@@ -31,3 +31,6 @@ module.exports = {
 // Login.jsx
 // Shipping.jsx
 // 69,72,73,74,88-tutorial formate product
+
+//  checkout
+//  confirm.js...route add
