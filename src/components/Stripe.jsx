@@ -21,7 +21,7 @@ const Stripe = ({ price, orderId }) => {
   const create_payment = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/order/create-payment",
+        "https://multivendor-backend-eight.vercel.app/api/order/create-payment",
         { price },
         { withCredentials: true }
       );
