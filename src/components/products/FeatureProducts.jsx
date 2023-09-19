@@ -59,9 +59,9 @@ const FeatureProducts = ({ products }) => {
   return (
     <div className="w-[85%] flex flex-wrap mx-auto">
       <div className="w-full">
-        <div className="text-center flex justify-center items-center flex-col text-4xl text-slate-600 font-bold relative pb-[45px]">
+        <div className=" flex  flex-col text-4xl text-accent font-semibold relative pb-[45px]">
           <h2>Feature Products</h2>
-          <div className="w-[100px] h-[4px] bg-[#7fad39] mt-4"></div>
+          <div className="w-[100px] h-[4px] bg-primary mt-4"></div>
         </div>
       </div>
       <div className="w-full grid grid-cols-4 md-lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
@@ -78,27 +78,29 @@ const FeatureProducts = ({ products }) => {
               ) : (
                 ""
               )}
-              <img
-                className="sm:w-full w-full h-[240px]"
-                src={p.images[0]}
-                alt="product images"
-              />
+              <div className="h-[240px]">
+                <img
+                  className="sm:w-full w-full h-full  object-cover"
+                  src={p.images[0]}
+                  alt="product images"
+                />
+              </div>
               <ul className="flex transition-all duration-700 -bottom-10 justify-center items-center gap-2 absolute w-full group-hover:bottom-3">
                 <li
                   onClick={() => add_wishlist(p)}
-                  className="w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all"
+                  className="w-[38px] h-[38px] cursor-pointer bg-white text-secondary flex justify-center items-center rounded-full hover:bg-secondary hover:text-white hover:rotate-[720deg] transition-all"
                 >
                   <AiFillHeart />
                 </li>
                 <Link
                   to={`/product/details/${p.slug}`}
-                  className="w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all"
+                  className="w-[38px] h-[38px] cursor-pointer bg-white text-primary flex justify-center items-center rounded-full hover:bg-secondary hover:text-white hover:rotate-[720deg] transition-all"
                 >
                   <FaEye />
                 </Link>
                 <li
                   onClick={() => add_card(p._id)}
-                  className="w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all"
+                  className="w-[38px] h-[38px] cursor-pointer bg-white text-primary flex justify-center items-center rounded-full hover:bg-[#7fad39]  hover:text-white hover:rotate-[720deg] transition-all"
                 >
                   <AiOutlineShoppingCart />
                 </li>

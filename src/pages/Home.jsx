@@ -7,6 +7,7 @@ import { get_category, get_products } from "../store/reducers/homeReducers";
 import Categorys from "../components/Categorys";
 import FeatureProducts from "../components/products/FeatureProducts";
 import Products from "../components/products/Products";
+import Footer from "../components/Footer";
 const Home = () => {
   const dispatch = useDispatch();
 
@@ -43,7 +44,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

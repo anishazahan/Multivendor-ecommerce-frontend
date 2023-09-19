@@ -17,6 +17,7 @@ import Headers from "../components/Header";
 import Products from "../components/products/Products";
 import ShopProducts from "../components/products/ShopProducts";
 import Pagination from "../components/Pagination";
+import Footer from "../components/Footer";
 
 const CategoryShops = () => {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -332,7 +333,7 @@ const CategoryShops = () => {
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

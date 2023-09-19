@@ -2,8 +2,12 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
-import img from "../assets/img/banner/1.jpg";
+// import img from "../assets/img/banner/1.jpg";
+import img1 from "../assets/Frame 7.png";
+import img2 from "../assets/Frame 8.png";
+import img3 from "../assets/Frame 6.png";
 const Banner = () => {
+  const imgCollection = [img1, img2, img3];
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -23,9 +27,9 @@ const Banner = () => {
     },
   };
   return (
-    <div className="w-full md-lg:mt-6 mt-8">
-      <div className="w-[90%] lg:w-[90%] mx-auto">
-        <img className="w-full" src={img} alt="" />
+    <div className="w-full md-lg:mt-6 mt-5">
+      <div className="w-[85%] lg:w-[90%] mx-auto">
+        {/* <img className="w-full" src={img} alt="" /> */}
         <div className="w-full flex flex-wrap md-lg:gap-8">
           <div className="w-full">
             <div className="my-8">
@@ -36,16 +40,13 @@ const Banner = () => {
                 showDots={true}
                 responsive={responsive}
               >
-                {[1, 2, 3, 4, 5, 6, 7].map((img, i) => (
+                {imgCollection.map((img, i) => (
                   <Link
                     className="lg-md:h-[440px] h-auto w-full block"
                     key={i}
                     to="#"
                   >
-                    <img
-                      src={`http://localhost:3000/src/assets/img/banner/${img}.jpg`}
-                      alt=""
-                    />
+                    <img src={img} alt="" />
                   </Link>
                 ))}
               </Carousel>

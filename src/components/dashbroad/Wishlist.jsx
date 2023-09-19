@@ -38,11 +38,13 @@ const Wishlist = () => {
               </div>
             )}
 
-            <img
-              className="sm:h-full w-full h-[240px]"
-              src={p.image}
-              alt="product images"
-            />
+            <div className="sm:h-full w-full h-[240px]">
+              <img
+                className="sm:h-full w-full h-full object-cover"
+                src={p.image}
+                alt="product images"
+              />
+            </div>
             <ul className="flex transition-all duration-700 -bottom-10 justify-center items-center gap-2 absolute w-full group-hover:bottom-3">
               <li
                 onClick={() => dispatch(remove_wishlist(p._id))}

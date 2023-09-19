@@ -6,6 +6,7 @@ export const add_to_card = createAsyncThunk(
   async (info, { rejectWithValue, fulfillWithValue }) => {
     try {
       const { data } = await api.post("/home/product/add-to-card", info);
+
       return fulfillWithValue(data);
     } catch (error) {
       console.log(error.response);
@@ -71,7 +72,7 @@ export const add_to_wishlist = createAsyncThunk(
   async (info, { rejectWithValue, fulfillWithValue }) => {
     try {
       const { data } = await api.post("/home/product/add-to-wishlist", info);
-      console.log(data);
+      // console.log(data);
       return fulfillWithValue(data);
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -126,6 +127,10 @@ export const cardReducer = createSlice({
       state.errorMessage = "";
       state.successMessage = "";
     },
+    reset_count: (state, _) => {
+      state.card_product_count = 0;
+      state.wishlist_count = 0;
+    },
   },
   extraReducers: {
     [add_to_card.rejected]: (state, { payload }) => {
@@ -136,6 +141,7 @@ export const cardReducer = createSlice({
       state.card_product_count = state.card_product_count + 1;
     },
     [get_card_products.fulfilled]: (state, { payload }) => {
+      // console.log(payload);
       state.card_products = payload.card_products;
       state.price = payload.price;
       state.card_product_count = payload.card_product_count;
@@ -174,5 +180,5 @@ export const cardReducer = createSlice({
   },
 });
 
-export const { messageClear } = cardReducer.actions;
+export const { messageClear, reset_count } = cardReducer.actions;
 export default cardReducer.reducer;

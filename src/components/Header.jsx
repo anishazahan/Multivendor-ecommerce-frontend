@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GrMail } from "react-icons/gr";
 import { IoIosCall } from "react-icons/io";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import languageImg from "../../src/assets/language (1).png";
 import {
   FaLinkedinIn,
   FaFacebookF,
@@ -9,6 +10,8 @@ import {
   FaLock,
   FaList,
 } from "react-icons/fa";
+import { IoCartSharp } from "react-icons/io";
+import logo from "../assets/Frame 4 (4).png";
 import {
   AiOutlineTwitter,
   AiFillGithub,
@@ -50,46 +53,47 @@ const Headers = () => {
 
   useEffect(() => {
     if (userInfo) {
+      // console.log(userInfo);
       dispatch(get_card_products(userInfo.id));
       dispatch(get_wishlist_products(userInfo.id));
     }
   }, [userInfo]);
   return (
     <div className="w-full bg-white">
-      <div className="header-top bg-[#eeeeee] md-lg:hidden">
+      <div className="header-top bg-purple-200 md-lg:hidden">
         <div className="w-[85%] lg:w-[90%] mx-auto">
-          <div className="flex w-full justify-between items-center h-[50px] text-slate-500">
+          <div className="flex w-full justify-between items-center h-[50px] text-slate-600">
             <ul className="flex justify-start items-center gap-8">
               <li className="flex relative justify-center items-center gap-2 text-sm after:absolute after:h-[18px] after:w-[1px] after:bg-[#afafaf] after:-right-[16px]">
                 <span>
                   <GrMail />
                 </span>
-                <span>sheikhfarid@gmail.com</span>
+                <span>anishazahan13@gmail.com</span>
               </li>
               <span>Multi vendor ecommerce</span>
             </ul>
             <div>
               <div className="flex justify-center items-center gap-10">
                 <div className="flex justify-center items-center gap-4">
-                  <a href="#">
+                  <a className="text-primary" href="#">
                     <FaFacebookF />
                   </a>
-                  <a href="#">
+                  <a className="text-primary" href="#">
                     <AiOutlineTwitter />
                   </a>
-                  <a href="#">
+                  <a className="text-primary" href="#">
                     <FaLinkedinIn />
                   </a>
-                  <a href="#">
+                  <a className="text-primary" href="#">
                     <AiFillGithub />
                   </a>
                 </div>
                 <div className="flex group cursor-pointer text-slate-800 text-sm justify-center items-center gap-1 relative after:h-[18px] after:w-[1px] after:bg-[#afafaf] after:-right-[16px] after:absolute before:absolute before:h-[18px] before:bg-[#afafaf] before:w-[1px] before:-left-[20px]">
-                  <img src="http://localhost:3000/images/language.png" alt="" />
+                  <img src={languageImg} alt="" />
                   <span>
                     <MdOutlineKeyboardArrowDown />
                   </span>
-                  <ul className="absolute invisible transition-all to-12 rounded-sm duration-200 text-white p-2 w-[100px] flex flex-col gap-3 group-hover:visible group-hover:top-6 group-hover:bg-black z-10">
+                  <ul className="absolute invisible transition-all to-12 rounded-sm duration-200 text-slate-600 p-2 w-[100px] flex flex-col gap-3 group-hover:visible group-hover:top-6 group-hover:bg-purple-200 z-10">
                     <li>Bangla</li>
                     <li>English</li>
                   </ul>
@@ -107,7 +111,7 @@ const Headers = () => {
                 ) : (
                   <Link
                     to="/login"
-                    className="flex cursor-pointer justify-center items-center gap-2 text-sm"
+                    className="flex font-medium cursor-pointer justify-center items-center gap-2 text-sm"
                   >
                     <span>
                       <FaLock />
@@ -122,11 +126,11 @@ const Headers = () => {
       </div>
       <div className="w-white">
         <div className="w-[85%] lg:w-[90%] mx-auto">
-          <div className="h-[80px] md-lg:h-[100px] flex justify-between items-center flex-wrap">
+          <div className="h-[90px] md-lg:h-[100px] flex justify-between items-center flex-wrap">
             <div className="md-lg:w-full w-3/12 md-lg:pt-4">
               <div className="flex justify-between items-center">
                 <Link to="/">
-                  <img src="http://localhost:3000/images/logo.png" alt="logo" />
+                  <img className="w-[35%] h-[35%]" src={logo} alt="logo" />
                 </Link>
                 <div
                   className="justify-center items-center w-[30px] h-[30px] bg-white text-slate-600 border border-slate-600 rounded-sm cursor-pointer lg:hidden md-lg:flex xl:hidden hidden"
@@ -144,7 +148,9 @@ const Headers = () => {
                   <li>
                     <Link
                       className={`p-2 block ${
-                        pathname === "/" ? "text-[#7fad39]" : "text-slate-600"
+                        pathname === "/"
+                          ? "text-primary border-b border-primary"
+                          : "text-slate-600"
                       }`}
                     >
                       Home
@@ -154,8 +160,8 @@ const Headers = () => {
                     <Link
                       to="/shops"
                       className={`p-2 block ${
-                        pathname === "/shop"
-                          ? "text-[#7fad39]"
+                        pathname === "/shops"
+                          ? "text-primary border-b border-primary"
                           : "text-slate-600"
                       }`}
                     >
@@ -166,7 +172,7 @@ const Headers = () => {
                     <Link
                       className={`p-2 block ${
                         pathname === "/blog"
-                          ? "text-[#7fad39]"
+                          ? "text-primary border-b border-primary"
                           : "text-slate-600"
                       }`}
                     >
@@ -177,7 +183,7 @@ const Headers = () => {
                     <Link
                       className={`p-2 block ${
                         pathname === "/about"
-                          ? "text-[#7fad39]"
+                          ? "text-primary border-b border-primary"
                           : "text-slate-600"
                       }`}
                     >
@@ -188,7 +194,7 @@ const Headers = () => {
                     <Link
                       className={`p-2 block ${
                         pathname === "/contact"
-                          ? "text-[#7fad39]"
+                          ? "text-primary border-b border-primary"
                           : "text-slate-600"
                       }`}
                     >
@@ -202,7 +208,7 @@ const Headers = () => {
                       onClick={() =>
                         navigate(userInfo ? "/dashboard/my-wishlist" : "/login")
                       }
-                      className="relative flex justify-center items-center cursor-pointer w-[35px] h-[35px] rounded-full bg-[#e2e2e2]"
+                      className="relative flex justify-center items-center cursor-pointer w-[35px] h-[35px] rounded-full bg-purple-200"
                     >
                       <span className="text-xl text-red-500">
                         <AiFillHeart />
@@ -215,9 +221,9 @@ const Headers = () => {
                     </div>
                     <div
                       onClick={redirect_card_page}
-                      className="relative flex justify-center items-center cursor-pointer w-[35px] h-[35px] rounded-full bg-[#e2e2e2]"
+                      className="relative flex justify-center items-center cursor-pointer w-[35px] h-[35px] rounded-full bg-purple-200"
                     >
-                      <span className="text-xl text-orange-500">
+                      <span className="text-xl text-primary">
                         <AiFillShopping />
                       </span>
                       {card_product_count !== 0 && (
@@ -373,7 +379,7 @@ const Headers = () => {
             <div className="bg-white relative">
               <div
                 onClick={() => setCategoryShow(!categoryShow)}
-                className="h-[50px] bg-violet-400 text-white flex justify-center md-lg:justify-between md-lg:px-6 items-center gap-3 font-bold text-md cursor-pointer"
+                className="h-[50px] bg-primary text-white flex justify-center md-lg:justify-between md-lg:px-6 items-center gap-3 font-bold text-md cursor-pointer"
               >
                 <div className="flex justify-center items-center gap-3">
                   <span>
@@ -426,7 +432,9 @@ const Headers = () => {
                       name=""
                       id=""
                     >
-                      <option value="">Select category</option>
+                      <option className="px-2" value="">
+                        Select category
+                      </option>
                       {categorys.map((c, i) => (
                         <option key={i} value={c.name}>
                           {c.name}
@@ -444,7 +452,7 @@ const Headers = () => {
                   />
                   <button
                     onClick={search}
-                    className="bg-violet-400 right-0 absolute px-8 h-full font-semibold uppercase text-white"
+                    className="bg-secondary right-0 absolute px-8 h-full font-semibold uppercase text-white"
                   >
                     Search
                   </button>
@@ -459,9 +467,9 @@ const Headers = () => {
                   </div>
                   <div className="flex justify-end flex-col gap-1">
                     <h2 className="text-md font-medium text-slate-700">
-                      +8803242343243
+                      +8804589495385
                     </h2>
-                    <span className="text-sm">support 33/45 time</span>
+                    <span className="text-sm">support 24/7 time</span>
                   </div>
                 </div>
               </div>

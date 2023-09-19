@@ -4,7 +4,7 @@ import { FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { AiFillShopping, AiFillHeart } from "react-icons/ai";
-
+import logo from "../assets/Frame 4 (4).png";
 const Footer = () => {
   const { card_product_count, wishlist_count } = useSelector(
     (state) => state.card
@@ -17,22 +17,18 @@ const Footer = () => {
       <div className="w-[85%] flex flex-wrap mx-auto border-b py-16 md-lg:pb-10 sm:pb-6">
         <div className="w-3/12 lg:w-4/12 sm:w-full">
           <div className="flex flex-col gap-3">
-            <img
-              className="w-[190px] h-[70x]"
-              src="http://localhost:3000/images/logo.png"
-              alt="logo"
-            />
+            <img className="w-[40%] h-[40%]" src={logo} alt="logo" />
             <ul className="flex flex-col gap-2 text-slate-600">
-              <li>Address : Rangpur , Kuigram</li>
-              <li>Phone : 5873458345</li>
-              <li>Email : farid@gmail.com</li>
+              <li>Address : Dhaka, Bangladesh</li>
+              <li>Phone : +8893209234089</li>
+              <li>Email : anishazahan13@gmail.com</li>
             </ul>
           </div>
         </div>
         <div className="w-5/12 lg:w-8/12 sm:w-full">
           <div className="flex justify-center sm:justify-start sm:mt-6 w-full">
             <div>
-              <h2 className="font-bold text-lg mb-2">Usefull links</h2>
+              <h2 className="font-bold  mb-2">Usefull links</h2>
               <div className="flex justify-between gap-[80px] lg:gap-[40px]">
                 <ul className="flex flex-col gap-2 text-slate-600 text-sm">
                   <li>
@@ -74,7 +70,7 @@ const Footer = () => {
         </div>
         <div className="w-4/12 lg:w-full lg:mt-6">
           <div className="w-full flex flex-col justify-start gap-5">
-            <h2 className="font-bold text-lg mb-2">Join Our</h2>
+            <h2 className="font-bold  mb-2">Join Our</h2>
             <span>
               Get Email updates about our latest and shop specials offers
             </span>
@@ -84,54 +80,52 @@ const Footer = () => {
                 className="h-full bg-transparent w-full px-3 outline-0"
                 type="text"
               />
-              <button className="h-full absolute right-0 bg-indigo-500 text-white uppercase px-4 font-bold text-sm">
+              <button className="h-full absolute right-0 bg-primary text-white uppercase px-4 font-bold text-sm">
                 Subscribe
               </button>
             </div>
             <ul className="flex justify-start items-center gap-3">
               <li>
-                <a
-                  className="w-[38px] h-[38px] hover:bg-[#7fad39] hover:text-white flex justify-center items-center bg-white rounded-full"
-                  href="#"
+                <Link
+                  className="w-[38px] h-[38px] hover:bg-secondary hover:text-white flex justify-center items-center bg-primary text-white rounded-full"
+                  to="#"
                 >
                   <FaFacebookF />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="w-[38px] h-[38px] hover:bg-[#7fad39] hover:text-white flex justify-center items-center bg-white rounded-full"
-                  href="#"
+                <Link
+                  className="w-[38px] h-[38px] hover:bg-secondary hover:text-white flex justify-center items-center bg-primary text-white rounded-full"
+                  to="#"
                 >
                   <AiOutlineTwitter />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="w-[38px] h-[38px] hover:bg-[#7fad39] hover:text-white flex justify-center items-center bg-white rounded-full"
-                  href="#"
+                <Link
+                  className="w-[38px] h-[38px] hover:bg-secondary hover:text-white flex justify-center items-center bg-primary text-white rounded-full"
+                  to="#"
                 >
                   <FaLinkedin />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="w-[38px] h-[38px] hover:bg-[#7fad39] hover:text-white flex justify-center items-center bg-white rounded-full"
-                  href="#"
+                <Link
+                  className="w-[38px] h-[38px] hover:bg-secondary hover:text-white flex justify-center items-center bg-primary text-white rounded-full"
+                  to="#"
                 >
                   <AiFillGithub />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="w-[85%] flex flex-wrap justify-center items-center text-slate-600 mx-auto py-5 text-center">
-        <span>
-          Copiright ©2023 All rights reserved | mady by{" "}
-          <a className="text-blue-500 underline" href="">
-            @Learn with Project
-          </a>
-        </span>
+      <div className="w-[85%] flex flex-wrap justify-center items-center text-slate-600 mx-auto py-8 text-center">
+        <h2>
+          Copyright ©2023 All rights reserved | madey by{" "}
+          <span className="font-bold text-secondary">Anisha Zahan</span>
+        </h2>
       </div>
 
       <div className="hidden fixed md-lg:block w-[50px] bottom-3 h-[110px] right-2 bg-white rounded-full p-2">

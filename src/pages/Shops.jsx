@@ -9,6 +9,8 @@ import { AiFillStar } from "react-icons/ai";
 import { CiStar } from "react-icons/ci";
 import { BsFillGridFill } from "react-icons/bs";
 import { FaThList } from "react-icons/fa";
+import img from "../assets/houseplants-getty-0820-226e798aabf040edb584602e2c5dfd3b.jpg";
+import logo from "../assets/Frame 4 (4).png";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -19,6 +21,7 @@ import {
 import Products from "../components/products/Products";
 import ShopProducts from "../components/products/ShopProducts";
 import Pagination from "../components/Pagination";
+import Footer from "../components/Footer";
 
 const Shops = () => {
   const {
@@ -58,7 +61,7 @@ const Shops = () => {
       setCategory("");
     }
   };
-  console.log(category);
+  // console.log(category);
   useEffect(() => {
     dispatch(
       query_products({
@@ -95,11 +98,14 @@ const Shops = () => {
   return (
     <div>
       <Headers />
-      <section className='bg-[url("http://localhost:3000/images/banner/shop.gif")] h-[220px] mt-6 bg-cover bg-no-repeat relative bg-left'>
-        <div className="absolute left-0 top-0 w-full h-full bg-[#2422228a]">
-          <div className="w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%] h-full mx-auto">
+      <section className="h-[40vh] mt-8 mx-auto relative w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%]">
+        <img className="w-full h-full object-cover " src={img} alt="" />
+        <div className="absolute inset-0 w-full h-full bg-[#2422228a]">
+          <div className="h-full">
             <div className="flex flex-col justify-center gap-1 items-center h-full w-full text-white">
-              <h2 className="text-3xl font-bold">Shop.my</h2>
+              {/* <div className="w-[40%] h-[40%]">
+                <img className="w-full h-full mx-auto" src={logo} alt="" />
+              </div> */}
               <div className="flex justify-center items-center gap-2 text-2xl w-full">
                 <Link to="/">Home</Link>
                 <span className="pt-1">
@@ -145,7 +151,7 @@ const Shops = () => {
                       id={c.name}
                     />
                     <label
-                      className="text-slate-600 block cursor-pointer"
+                      className="text-slate-600 font-semibold block cursor-pointer"
                       htmlFor={c.name}
                     >
                       {c.name}
@@ -173,7 +179,7 @@ const Shops = () => {
                   )}
                   renderThumb={({ props }) => (
                     <div
-                      className="w-[15px] h-[15px] bg-blue-500 rounded-full"
+                      className="w-[15px] h-[15px] bg-primary rounded-full"
                       {...props}
                     />
                   )}
@@ -192,7 +198,7 @@ const Shops = () => {
                 <div className="flex flex-col gap-3">
                   <div
                     onClick={() => setRatingQ(5)}
-                    className="text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer"
+                    className="text-secondary flex justify-start items-start gap-2 text-xl cursor-pointer"
                   >
                     <span>
                       <AiFillStar />
@@ -212,7 +218,7 @@ const Shops = () => {
                   </div>
                   <div
                     onClick={() => setRatingQ(4)}
-                    className="text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer"
+                    className="text-secondary flex justify-start items-start gap-2 text-xl cursor-pointer"
                   >
                     <span>
                       <AiFillStar />
@@ -232,7 +238,7 @@ const Shops = () => {
                   </div>
                   <div
                     onClick={() => setRatingQ(3)}
-                    className="text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer"
+                    className="text-secondary flex justify-start items-start gap-2 text-xl cursor-pointer"
                   >
                     <span>
                       <AiFillStar />
@@ -252,7 +258,7 @@ const Shops = () => {
                   </div>
                   <div
                     onClick={() => setRatingQ(2)}
-                    className="text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer"
+                    className="text-secondary flex justify-start items-start gap-2 text-xl cursor-pointer"
                   >
                     <span>
                       <AiFillStar />
@@ -272,7 +278,7 @@ const Shops = () => {
                   </div>
                   <div
                     onClick={() => setRatingQ(1)}
-                    className="text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer"
+                    className="text-secondary flex justify-start items-start gap-2 text-xl cursor-pointer"
                   >
                     <span>
                       <AiFillStar />
@@ -292,7 +298,7 @@ const Shops = () => {
                   </div>
                   <div
                     onClick={resetRating}
-                    className="text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer"
+                    className="text-secondary flex justify-start items-start gap-2 text-xl cursor-pointer"
                   >
                     <span>
                       <CiStar />
@@ -325,7 +331,7 @@ const Shops = () => {
                   <div className="flex justify-center items-center gap-3">
                     <select
                       onChange={(e) => setSortPrice(e.target.value)}
-                      className="p-1 border outline-0 text-slate-600 font-semibold"
+                      className=" border outline-0 text-slate-600 p-1 font-semibold"
                       name=""
                       id=""
                     >
@@ -372,7 +378,7 @@ const Shops = () => {
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

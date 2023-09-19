@@ -36,7 +36,7 @@ function App() {
         <Route path="/products?" element={<CategoryShops />} />
         <Route path="/products/search?" element={<SearchProducts />} />
         <Route path="/shipping" element={<Shipping />} />
-        <Route path="/payment" element={<Payment />} />
+        {/* <Route path="/payment" element={<Payment />} /> */}
 
         <Route path="/dashboard" element={<ProtectUser />}>
           <Route path="" element={<Dashboard />}>

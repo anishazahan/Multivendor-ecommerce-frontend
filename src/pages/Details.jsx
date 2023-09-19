@@ -29,6 +29,8 @@ import toast from "react-hot-toast";
 import { get_product } from "../store/reducers/homeReducers";
 import Headers from "../components/Header";
 import Reviews from "../components/Reviews";
+import Footer from "../components/Footer";
+import img from "../assets/houseplants-getty-0820-226e798aabf040edb584602e2c5dfd3b.jpg";
 
 const Details = () => {
   const navigate = useNavigate();
@@ -169,15 +171,25 @@ const Details = () => {
   return (
     <div>
       <Headers />
-      <div className='bg-[url("http://localhost:3000/images/banner/order.jpg")] h-[220px] mt-6 bg-cover bg-no-repeat relative bg-left'>
-        <div className="absolute left-0 top-0 w-full h-full bg-[#2422228a]">
-          <div className="w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%] h-full mx-auto">
+      <section className="h-[40vh] mt-8 mx-auto relative w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%]">
+        <img className="w-full h-full object-cover " src={img} alt="" />
+        <div className="absolute inset-0 w-full h-full bg-[#2422228a]">
+          <div className="h-full">
             <div className="flex flex-col justify-center gap-1 items-center h-full w-full text-white">
-              <h2 className="text-3xl font-bold">Shop.my</h2>
+              {/* <div className="w-[40%] h-[40%]">
+                <img className="w-full h-full mx-auto" src={logo} alt="" />
+              </div> */}
+              <div className="flex justify-center items-center gap-2 text-2xl w-full">
+                <Link to="/">Home</Link>
+                <span className="pt-1">
+                  <MdOutlineKeyboardArrowRight />
+                </span>
+                <span>Details Products</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <div className="bg-slate-100 py-5 mb-5">
         <div className="w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%] h-full mx-auto">
           <div className="flex justify-start items-center text-md text-slate-600 w-full">
@@ -198,11 +210,13 @@ const Details = () => {
           <div className="grid grid-cols-2 md-lg:grid-cols-1 gap-8">
             <div>
               <div className="p-5 border">
-                <img
-                  className="h-[500px] w-full"
-                  src={image ? image : product.images?.[0]}
-                  alt=""
-                />
+                <div className="h-[500px] w-full">
+                  <img
+                    className="h-full object-cover w-full"
+                    src={image ? image : product.images?.[0]}
+                    alt=""
+                  />
+                </div>
               </div>
               <div className="py-3">
                 {product.images && (
@@ -235,7 +249,7 @@ const Details = () => {
                 <div className="flex text-xl">
                   <Ratings ratings={product.rating} />
                 </div>
-                <span className="text-green-500">(23 reviews)</span>
+                <span className="text-primary">(23 reviews)</span>
               </div>
               <div className="text-2xl text-red-500 font-bold flex gap-3">
                 {product.discount !== 0 ? (
@@ -272,7 +286,7 @@ const Details = () => {
                     <div>
                       <button
                         onClick={add_card}
-                        className="px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-purple-500/40 bg-purple-500 text-white"
+                        className="px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-purple-500/40 bg-primary text-white"
                       >
                         Add To Card
                       </button>
@@ -284,7 +298,7 @@ const Details = () => {
                 <div>
                   <div
                     onClick={add_wishlist}
-                    className="h-[50px] w-[50px] flex justify-center items-center cursor-pointer hover:shadow-lg hover:shadow-cyan-500/40 bg-cyan-500 text-white"
+                    className="h-[50px] w-[50px] flex justify-center items-center cursor-pointer hover:shadow-lg hover:shadow-cyan-500/40 bg-secondary text-white"
                   >
                     <AiFillHeart />
                   </div>
@@ -343,7 +357,7 @@ const Details = () => {
                 {product.stock ? (
                   <button
                     onClick={buy}
-                    className="px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-emerald-500/40 bg-emerald-500 text-white"
+                    className="px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-emerald-500/40 bg-secondary text-white"
                   >
                     Buy Now
                   </button>
@@ -352,7 +366,7 @@ const Details = () => {
                 )}
                 <Link
                   to={`/dashboard/chat/${product.sellerId}`}
-                  className="px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-lime-500/40 bg-lime-500 text-white block"
+                  className="px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-lime-500/40 bg-emerald-500 text-white block"
                 >
                   Chat Seller
                 </Link>
@@ -369,9 +383,9 @@ const Details = () => {
                 <div className="grid grid-cols-2">
                   <button
                     onClick={() => setState("reviews")}
-                    className={`py-1 hover:text-white px-5 hover:bg-green-500 ${
+                    className={`py-1 hover:text-white px-5 hover:bg-primary ${
                       state === "reviews"
-                        ? "bg-green-500 text-white"
+                        ? "bg-primary text-white"
                         : "bg-slate-200 text-slate-700"
                     } rounded-sm`}
                   >
@@ -381,7 +395,7 @@ const Details = () => {
                     onClick={() => setState("description")}
                     className={`py-1 px-5 hover:text-white hover:bg-green-500 ${
                       state === "description"
-                        ? "bg-green-500 text-white"
+                        ? "bg-primary text-white"
                         : "bg-slate-200 text-slate-700"
                     } rounded-sm`}
                   >
@@ -466,7 +480,7 @@ const Details = () => {
                       <div className="relative h-[270px]">
                         <div className="w-full h-full">
                           <img
-                            className="w-full h-full"
+                            className="w-full h-full object-cover"
                             src={p.images[0]}
                             alt=""
                           />
@@ -502,7 +516,7 @@ const Details = () => {
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

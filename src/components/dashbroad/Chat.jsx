@@ -13,6 +13,7 @@ import {
   updateMessage,
 } from "../../store/reducers/chatReducer";
 import { messageClear } from "../../store/reducers/homeReducers";
+import userImg from "../../assets/149071.png";
 
 const socket = io("http://localhost:5000");
 
@@ -144,7 +145,7 @@ const Chat = () => {
                           <img
                             className="w-[30px] h-[30px] "
                             // customer img
-                            src="http://localhost:3000/images/user.png"
+                            src={userImg}
                             alt=""
                           />
                           <div className="p-2 bg-purple-500 text-white rounded-md">
@@ -162,7 +163,7 @@ const Chat = () => {
                           <img
                             className="w-[30px] h-[30px] "
                             // seller img
-                            src="http://localhost:3000/images/user.png"
+                            src=""
                             alt=""
                           />
                           <div className="p-2 bg-cyan-500 text-white rounded-md">

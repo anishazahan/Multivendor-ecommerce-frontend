@@ -14,6 +14,8 @@ import {
   quantity_inc,
 } from "../store/reducers/cardReducer";
 import Headers from "../components/Header";
+import img from "../assets/houseplants-getty-0820-226e798aabf040edb584602e2c5dfd3b.jpg";
+import Footer from "../components/Footer";
 
 const Card = () => {
   const dispatch = useDispatch();
@@ -27,6 +29,8 @@ const Card = () => {
     shipping_fee,
     outofstock_products,
   } = useSelector((state) => state.card);
+
+  // console.log(card_products);
 
   const redirect = () => {
     navegate("/shipping", {
@@ -66,50 +70,55 @@ const Card = () => {
   return (
     <div>
       <Headers />
-      <section className='bg-[url("http://localhost:3000/images/banner/card.jpg")] h-[220px] mt-6 bg-cover bg-no-repeat relative bg-left'>
-        <div className="absolute left-0 top-0 w-full h-full bg-[#2422228a]">
-          <div className="w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%] h-full mx-auto">
+      <section className="h-[40vh] mt-8 mx-auto relative w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%]">
+        <img className="w-full h-full object-cover " src={img} alt="" />
+        <div className="absolute inset-0 w-full h-full bg-[#2422228a]">
+          <div className="h-full">
             <div className="flex flex-col justify-center gap-1 items-center h-full w-full text-white">
-              <h2 className="text-3xl font-bold">Shop.my</h2>
+              {/* <div className="w-[40%] h-[40%]">
+                <img className="w-full h-full mx-auto" src={logo} alt="" />
+              </div> */}
               <div className="flex justify-center items-center gap-2 text-2xl w-full">
                 <Link to="/">Home</Link>
-                <span className="pt-2">
+                <span className="pt-1">
                   <MdOutlineKeyboardArrowRight />
                 </span>
-                <span>Card</span>
+                <span>card</span>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-[#eeeeee]">
+      <section className="">
         <div className="w-[85%] lg:w-[90%] md:w-[90%] sm:w-[90] mx-auto py-16">
           {card_products.length > 0 || outofstock_products.length > 0 ? (
             <div className="flex flex-wrap">
               <div className="w-[67%] md-lg:w-full">
                 <div className="pr-3 md-lg:pr-0">
                   <div className="flex flex-col gap-3">
-                    <div className="bg-white p-4">
+                    <div className="bg-gray-100 border p-4">
                       <h2 className="text-md text-green-500 font-semibold">
                         Stock Products {card_products.length}
                       </h2>
                     </div>
-                    {card_products.map((p, i) => (
-                      <div className="flex bg-white p-4 flex-col gap-2">
+                    {card_products?.map((p, i) => (
+                      <div key={i} className="flex bg-white p-4 flex-col gap-2">
                         <div className="flex justify-start items-center">
                           <h2 className="text-md text-slate-600">
                             {p.shopName}
                           </h2>
                         </div>
                         {p.products.map((pt, i) => (
-                          <div className="w-full flex flex-wrap">
+                          <div key={i} className="w-full flex flex-wrap">
                             <div className="flex sm:w-full gap-2 w-7/12">
                               <div className="flex gap-2 justify-start items-center">
-                                <img
-                                  className="w-[80px] h-[80px]"
-                                  src={pt.productInfo.images[0]}
-                                  alt="product images"
-                                />
+                                <div className="w-[80px] h-[80px]">
+                                  <img
+                                    className="w-full h-full object-cover"
+                                    src={pt.productInfo.images[0]}
+                                    alt="product images"
+                                  />
+                                </div>
                                 <div className="pr-4 text-slate-600">
                                   <h2 className="text-md">
                                     {pt.productInfo.name}
@@ -122,7 +131,7 @@ const Card = () => {
                             </div>
                             <div className="flex justify-between w-5/12 sm:w-full sm:mt-3">
                               <div className="pl-4 sm:pl-0">
-                                <h2 className="text-lg text-orange-500">
+                                <h2 className="text-lg text-secondary">
                                   $
                                   {pt.productInfo.price -
                                     Math.floor(
@@ -201,7 +210,7 @@ const Card = () => {
                               </div>
                               <div className="flex justify-between w-5/12 sm:w-full sm:mt-3">
                                 <div className="pl-4 sm:pl-0">
-                                  <h2 className="text-lg text-orange-500">
+                                  <h2 className="text-lg text-secondary">
                                     $
                                     {p.products[0].price -
                                       Math.floor(
@@ -274,19 +283,19 @@ const Card = () => {
                           type="text"
                           placeholder="Input Vauchar Coupon"
                         />
-                        <button className="px-5 py-[1px] bg-blue-500 text-white rounded-sm uppercase text-sm">
+                        <button className="px-5 py-[1px] bg-primary text-white rounded-sm uppercase text-sm">
                           Apply
                         </button>
                       </div>
                       <div className="flex justify-between items-center">
                         <span>Total</span>
-                        <span className="text-lg text-orange-500">
+                        <span className="text-lg text-secondary">
                           ${price + shipping_fee}
                         </span>
                       </div>
                       <button
                         onClick={redirect}
-                        className="px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-orange-500 text-sm text-white uppercase"
+                        className="px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-secondary text-sm text-white uppercase"
                       >
                         Proceed to checkout {buy_product_item}
                       </button>
@@ -297,14 +306,14 @@ const Card = () => {
             </div>
           ) : (
             <div>
-              <Link className="px-4 py-1 bg-indigo-500 text-white" to="/shops">
+              <Link className="px-4 py-1 bg-primary text-white" to="/shops">
                 Shop Now
               </Link>
             </div>
           )}
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

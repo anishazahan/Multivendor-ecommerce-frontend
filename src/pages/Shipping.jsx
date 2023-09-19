@@ -5,8 +5,11 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { place_order } from "../store/reducers/orderReducer";
 import Headers from "../components/Header";
+import Footer from "../components/Footer";
+import errorImg from "../../src/assets/error.png";
 
 const Shipping = () => {
+  const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
@@ -231,7 +234,7 @@ const Shipping = () => {
                         </div>
                         <div className="flex justify-end w-5/12 sm:w-full sm:mt-3">
                           <div className="pl-4 sm:pl-0">
-                            <h2 className="text-lg text-orange-500">
+                            <h2 className="text-lg text-secondary">
                               $
                               {pt.productInfo.price -
                                 Math.floor(
@@ -273,21 +276,52 @@ const Shipping = () => {
                     <span>${price + shipping_fee}</span>
                   </div>
                   <button
-                    onClick={placeOrder}
+                    onClick={() => setShowPopup(true)}
                     disabled={res ? false : true}
                     className={`px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg ${
-                      res ? "bg-orange-500" : "bg-orange-300"
+                      res ? "bg-secondary" : "bg-orange-300"
                     } text-sm text-white uppercase`}
                   >
                     Place Order
                   </button>
                 </div>
+
+                {/* Popup for successful login */}
+                {showPopup && (
+                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-28 rounded-md">
+                      <div className="flex justify-center">
+                        <img
+                          className="w-20 object-contain"
+                          src={errorImg}
+                          alt=""
+                        />
+                      </div>
+                      <h1 className="font-bold my-5 text-2xl text-secondary text-center">
+                        Sorry !
+                      </h1>
+                      <p className="text-xl font-bold mb-4 text-center">
+                        {" "}
+                        This System is currently unavailable
+                      </p>
+
+                      <div className="flex justify-center space-x-4 items-center mt-8">
+                        <button
+                          className="px-6 py-2 bg-primary text-white rounded-sm font-bold"
+                          onClick={() => setShowPopup(false)}
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
