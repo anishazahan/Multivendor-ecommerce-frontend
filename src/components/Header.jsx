@@ -286,9 +286,10 @@ const Headers = () => {
                 </div>
               )}
             </div>
-            <ul className="flex flex-col justify-start items-start  text-md font-semibold uppercase">
+            <ul className="flex flex-col justify-start items-start  text-md font-semibold ">
               <li>
                 <Link
+                  to="/"
                   className={`py-2 block ${
                     pathname === "/" ? "text-[#7fad39]" : "text-slate-600"
                   }`}
