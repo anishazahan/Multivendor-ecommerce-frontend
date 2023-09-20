@@ -254,7 +254,7 @@ const Headers = () => {
         >
           <div className="flex justify-start flex-col gap-6">
             <Link to="/">
-              <img className="w-[35%] h-[35%] mb-2" src={logo} alt="logo" />
+              <img className="w-[35%] h-[35%] mb-4" src={logo} alt="logo" />
             </Link>
             <div className="flex justify-star items-center gap-10">
               <div className="flex group cursor-pointer text-slate-800 text-sm justify-center items-center gap-1 relative after:h-[18px] after:w-[1px] after:bg-[#afafaf] after:-right-[16px] after:absolute">
@@ -298,6 +298,7 @@ const Headers = () => {
               </li>
               <li>
                 <Link
+                  to="/shops"
                   className={`py-2 block ${
                     pathname === "/shops" ? "text-[#7fad39]" : "text-slate-600"
                   }`}
