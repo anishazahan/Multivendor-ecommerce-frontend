@@ -253,11 +253,11 @@ const Headers = () => {
         >
           <div className="flex justify-start flex-col gap-6">
             <Link to="/">
-              <img src="http://localhost:3000/images/logo.png" alt="logo" />
+              <img className="w-[35%] h-[35%]" src={logo} alt="logo" />
             </Link>
             <div className="flex justify-star items-center gap-10">
               <div className="flex group cursor-pointer text-slate-800 text-sm justify-center items-center gap-1 relative after:h-[18px] after:w-[1px] after:bg-[#afafaf] after:-right-[16px] after:absolute">
-                <img src="http://localhost:3000/images/language.png" alt="" />
+                <img src={languageImg} alt="" />
                 <span>
                   <MdOutlineKeyboardArrowDown />
                 </span>
@@ -366,7 +366,7 @@ const Headers = () => {
                 <span>
                   <GrMail />
                 </span>
-                <span>learnwithproject@gmail.com</span>
+                <span>anishazahan13@gmail.com</span>
               </li>
               <span className="text-sm">Multi vendor ecommerce</span>
             </ul>
