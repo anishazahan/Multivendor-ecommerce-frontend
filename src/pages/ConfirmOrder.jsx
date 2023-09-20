@@ -56,7 +56,7 @@ const ConfirmOrder = () => {
     if (orderId) {
       try {
         await axios.get(
-          `https://multivendor-backend-eight.vercel.app/api/order/confirm/${orderId}`
+          `https://multivendor-ecommerce-backend.onrender.com/api/order/confirm/${orderId}`
         );
         localStorage.removeItem("orderId");
         setLoader(false);

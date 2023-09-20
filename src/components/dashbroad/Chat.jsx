@@ -15,7 +15,7 @@ import {
 import { messageClear } from "../../store/reducers/homeReducers";
 import userImg from "../../assets/149071.png";
 
-const socket = io("https://multivendor-backend-eight.vercel.app");
+const socket = io("https://multivendor-ecommerce-backend.onrender.com");
 
 const Chat = () => {
   const scrollRef = useRef();
