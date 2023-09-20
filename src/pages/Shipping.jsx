@@ -7,6 +7,7 @@ import { place_order } from "../store/reducers/orderReducer";
 import Headers from "../components/Header";
 import Footer from "../components/Footer";
 import errorImg from "../../src/assets/error.png";
+import img from "../assets/houseplants-getty-0820-226e798aabf040edb584602e2c5dfd3b.jpg";
 
 const Shipping = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -55,17 +56,20 @@ const Shipping = () => {
   return (
     <div>
       <Headers />
-      <section className='bg-[url("http://localhost:3000/images/banner/order.jpg")] h-[220px] mt-6 bg-cover bg-no-repeat relative bg-left'>
-        <div className="absolute left-0 top-0 w-full h-full bg-[#2422228a]">
-          <div className="w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%] h-full mx-auto">
+      <section className="h-[40vh] mt-8 mx-auto relative w-[85%] md:w-[80%] sm:w-[90%] lg:w-[90%]">
+        <img className="w-full h-full object-cover " src={img} alt="" />
+        <div className="absolute inset-0 w-full h-full bg-[#2422228a]">
+          <div className="h-full">
             <div className="flex flex-col justify-center gap-1 items-center h-full w-full text-white">
-              <h2 className="text-3xl font-bold">Shop.my</h2>
+              {/* <div className="w-[40%] h-[40%]">
+                <img className="w-full h-full mx-auto" src={logo} alt="" />
+              </div> */}
               <div className="flex justify-center items-center gap-2 text-2xl w-full">
                 <Link to="/">Home</Link>
-                <span className="pt-2">
+                <span className="pt-1">
                   <MdOutlineKeyboardArrowRight />
                 </span>
-                <span>Place Order</span>
+                <span>Products</span>
               </div>
             </div>
           </div>
