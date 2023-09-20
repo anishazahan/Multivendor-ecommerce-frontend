@@ -136,7 +136,7 @@ const Headers = () => {
                   className="justify-center items-center w-[30px] h-[30px] bg-white text-slate-600 border border-slate-600 rounded-sm cursor-pointer lg:hidden md-lg:flex xl:hidden hidden"
                   onClick={() => setShowShidebar(false)}
                 >
-                  <span>
+                  <span className="p-2 text-2xl">
                     <FaList />
                   </span>
                 </div>
@@ -299,7 +299,7 @@ const Headers = () => {
               <li>
                 <Link
                   className={`py-2 block ${
-                    pathname === "/shop" ? "text-[#7fad39]" : "text-slate-600"
+                    pathname === "/shops" ? "text-[#7fad39]" : "text-slate-600"
                   }`}
                 >
                   Shop
